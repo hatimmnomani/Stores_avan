@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#e14e46</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="avanRed">#e14e46</color>
+    <color name="avanyellow">#f6c83f</color>
+    <color name="avanWhite">#ffffff</color>
+    <color name="avanGrey">#5e5e5e</color>
+    <color name="avanSilver">#a1a1a1</color>
+    <color name="avanBlack">#1b1c1c</color>
+</resources>
