@@ -1,10 +1,11 @@
-package com.example.stores_avan;
+package com.example.stores_avan.server;
 
 import android.app.IntentService;
 import android.content.Intent;
 import android.support.annotation.Nullable;
 import android.util.Log;
 
+import com.example.stores_avan.Entities.Department;
 import com.google.gson.Gson;
 
 import java.io.IOException;

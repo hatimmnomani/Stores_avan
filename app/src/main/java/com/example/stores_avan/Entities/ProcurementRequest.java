@@ -1,8 +1,10 @@
-package com.example.stores_avan;
+package com.example.stores_avan.Entities;
+
+import com.example.stores_avan.Entities.Items;
 
 import java.util.ArrayList;
 
-class ProcurementRequest {
+public class ProcurementRequest {
     public Integer rid;
     public String purpose;
     public Integer Status;

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".activities.MainActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -36,54 +36,6 @@
 
             </android.support.constraint.ConstraintLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="113dp"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/button11"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#E14E46"
-                    android:text="Products"
-                    android:textColor="#ffffff" />
-
-                <Button
-                    android:id="@+id/button12"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#E14E46"
-                    android:text="Request"
-                    android:textColor="#ffffff" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/button13"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#E14E46"
-                    android:text="Status"
-                    android:textColor="#ffffff" />
-
-                <Button
-                    android:id="@+id/button14"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#E14E46"
-                    android:text="History"
-                    android:textColor="#ffffff" />
-            </LinearLayout>
-
             <Button
                 android:id="@+id/xyz"
                 android:layout_width="match_parent"
@@ -95,6 +47,48 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="test2" />
+
+            <android.support.v4.widget.ContentLoadingProgressBar
+                android:id="@+id/progress_circular"
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:background="#fff">
+
+                <ImageView
+                    android:id="@+id/gicon"
+                    android:layout_width="1dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/google_icon"/>
+
+                <Button
+                    android:id="@+id/login"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textColor="@color/avanRed"
+                    android:textStyle="bold"
+                    android:textFontWeight="5dp"
+                    android:text="@string/glogin"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginLeft="10dp"
+                    android:drawableStart="@drawable/google_icon"
+                    android:drawableLeft="@drawable/google_icon"
+                    android:drawablePadding="-50dp"
+                    android:textSize="20sp"
+                    android:background="@drawable/round_bg"/>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/logout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/logout" />
+
         </LinearLayout>
     </ScrollView>
 

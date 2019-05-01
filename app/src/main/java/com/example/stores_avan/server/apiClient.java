@@ -1,4 +1,4 @@
-package com.example.stores_avan;
+package com.example.stores_avan.server;
 
 
 import java.util.concurrent.TimeUnit;

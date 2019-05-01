@@ -1,4 +1,4 @@
-package com.example.stores_avan;
+package com.example.stores_avan.adapters;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.CardView;
@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import java.util.ArrayList;
+import com.example.stores_avan.R;
 
 public class adapter1 extends RecyclerView.Adapter<adapter1.MyViewHolder> {
        //ArrayList x ;

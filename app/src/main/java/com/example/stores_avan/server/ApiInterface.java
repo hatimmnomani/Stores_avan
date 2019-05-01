@@ -1,4 +1,9 @@
-package com.example.stores_avan;
+package com.example.stores_avan.server;
+import com.example.stores_avan.Entities.Catagory;
+import com.example.stores_avan.Entities.Department;
+import com.example.stores_avan.Entities.ProcurementRequest;
+import com.example.stores_avan.Entities.userId;
+
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Query;

@@ -7,9 +7,9 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.example.stores_avan.BlankFragment;
+import com.example.stores_avan.fragments.BlankFragment;
 import com.example.stores_avan.R;
-import com.example.stores_avan.inventoryMainFragment;
+import com.example.stores_avan.fragments.inventoryMainFragment;
 
 /**
  * A [FragmentPagerAdapter] that returns a fragment corresponding to

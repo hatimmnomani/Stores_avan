@@ -1,10 +1,13 @@
-package com.example.stores_avan;
+package com.example.stores_avan.activities;
 
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 
+import com.example.stores_avan.Entities.Department;
+import com.example.stores_avan.R;
+import com.example.stores_avan.fragments.inventoryMainFragment;
 import com.example.stores_avan.ui.main.SectionsPagerAdapter;
 
 public class Main2Activity extends AppCompatActivity implements inventoryMainFragment.OnListFragmentInteractionListener {

@@ -1,14 +1,17 @@
-package com.example.stores_avan;
+package com.example.stores_avan.adapters;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
-import android.text.Layout;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.stores_avan.Entities.Catagory;
+import com.example.stores_avan.Entities.Department;
+import com.example.stores_avan.R;
 
 public class DepartmentAdapter extends RecyclerView.Adapter <RecyclerView.ViewHolder>{
 

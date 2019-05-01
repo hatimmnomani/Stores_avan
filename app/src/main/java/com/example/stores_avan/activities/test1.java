@@ -1,7 +1,9 @@
-package com.example.stores_avan;
+package com.example.stores_avan.activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.example.stores_avan.R;
 
 public class test1 extends AppCompatActivity {
 

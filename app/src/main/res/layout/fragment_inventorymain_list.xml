@@ -13,6 +13,6 @@
     android:layout_marginLeft="16dp"
     android:layout_marginRight="16dp"
     app:layoutManager="LinearLayoutManager"
-    tools:context=".inventoryMainFragment"
+    tools:context=".fragments.inventoryMainFragment"
     tools:listitem="@layout/fragment_inventorymain" />
 </android.support.constraint.ConstraintLayout>

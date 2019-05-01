@@ -1,6 +1,6 @@
-package com.example.stores_avan;
+package com.example.stores_avan.Entities;
 
-class Items {
+public class Items {
     public String pname;
     public String pdisc;
     public Integer quantity;

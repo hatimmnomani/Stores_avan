@@ -1,12 +1,12 @@
-package com.example.stores_avan;
+package com.example.stores_avan.activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
-import java.util.ArrayList;
-import java.util.Arrays;
+import com.example.stores_avan.R;
+import com.example.stores_avan.adapters.adapter1;
 
 public class recycle extends AppCompatActivity {
 
