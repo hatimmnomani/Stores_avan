@@ -5,4 +5,5 @@ public class Items {
     public String pdisc;
     public Integer quantity;
     public Integer price;
+    public Integer m_u;
 }

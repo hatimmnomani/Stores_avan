@@ -1,5 +1,6 @@
 package com.example.stores_avan.activities;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
@@ -7,10 +8,13 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.example.stores_avan.Entities.Department;
 import com.example.stores_avan.R;
+import com.example.stores_avan.fragments.BlankFragment2;
 import com.example.stores_avan.fragments.inventoryMainFragment;
 import com.example.stores_avan.ui.main.SectionsPagerAdapter;
 
-public class Main2Activity extends AppCompatActivity implements inventoryMainFragment.OnListFragmentInteractionListener {
+public class Main2Activity extends AppCompatActivity implements inventoryMainFragment.OnListFragmentInteractionListener,BlankFragment2.OnFragmentInteractionListener{
+    private static final String TAG = "Main2Activity";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +25,10 @@ public class Main2Activity extends AppCompatActivity implements inventoryMainFra
         viewPager.setAdapter(sectionsPagerAdapter);
         TabLayout tabs = findViewById(R.id.tabs);
         tabs.setupWithViewPager(viewPager);
+
+
+       // BlankFragment2.OnFragmentInteractionListener;
+
         //FloatingActionButton fab = findViewById(R.id.fab);
 
         /*fab.setOnClickListener(new View.OnClickListener() {
@@ -32,8 +40,15 @@ public class Main2Activity extends AppCompatActivity implements inventoryMainFra
         });*/
     }
 
+
+
     @Override
     public void onListFragmentInteraction(Department item) {
+
+    }
+
+    @Override
+    public void onFragmentInteraction(Uri uri) {
 
     }
 }

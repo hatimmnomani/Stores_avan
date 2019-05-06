@@ -28,27 +28,43 @@
 
                 <TextView
                     android:id="@+id/R_n"
+                    android:fontFamily="@font/robotoslab_regular"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
                     android:text="Request no - 21"
+                    android:textColor="@color/avanGrey"
                     android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/purpose"
+                    android:fontFamily="@font/robotoslab_regular"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
                     android:text="for xyz"
+                    android:textColor="@color/avanGrey"
                     android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/r_date"
+                    android:fontFamily="@font/robotoslab_regular"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
                     android:text="10/05/2019"
+                    android:textColor="@color/avanGrey"
                     android:textSize="20sp" />
 
                 <Button
                     android:id="@+id/i_1"
+                    android:background="@color/avanRed"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:fontFamily="@font/robotoslab_regular"
+                    android:textColor="@color/avanWhite"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="view Items" />
@@ -63,20 +79,33 @@
 
                 <TextView
                     android:id="@+id/textView8"
+                    android:fontFamily="@font/robotoslab_bold"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
                     android:text="TextView"
+                    android:textColor="#131212"
                     android:textSize="25sp" />
+
 
                 <ToggleButton
                     android:id="@+id/toggleButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="#02E4E1E1"
                     android:checked="false"
                     android:clickable="false"
+                    android:fontFamily="@font/robotoslab_regular"
                     android:longClickable="true"
-                    android:text="ToggleButton" />
+                    android:outlineAmbientShadowColor="@color/avanRed"
+                    android:shadowColor="@color/avanRed"
+
+                    android:text="ToggleButton"
+                    android:textColor="@color/avanRed" />
             </LinearLayout>
 
         </LinearLayout>

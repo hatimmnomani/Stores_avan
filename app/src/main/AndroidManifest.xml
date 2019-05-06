@@ -19,7 +19,9 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".activities.recycle" />
 
-        <activity android:name=".activities.MainActivity">
+        <activity android:name=".activities.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -30,6 +32,10 @@
         <service
             android:name=".server.DeptService"
             android:enabled="true" />
+        <service android:name=".server.ServerFetch"
+            android:enabled="true"/>
+        <service android:name=".server.PostService"
+            android:enabled="true"/>
     </application>
 
 </manifest>
