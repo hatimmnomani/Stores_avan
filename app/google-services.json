@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "704256182848",
+    "firebase_url": "https://storesavan-c9220.firebaseio.com",
+    "project_id": "storesavan-c9220",
+    "storage_bucket": "storesavan-c9220.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:704256182848:android:43b95239f662236a",
+        "android_client_info": {
+          "package_name": "com.example.stores_avan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "704256182848-k6p5ir8j5j984id96sm2jdj461m643a1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.stores_avan",
+            "certificate_hash": "98237bdde37616292fb820a0702ce0c7f8931e48"
+          }
+        },
+        {
+          "client_id": "704256182848-s3umui7oabgkavq47403g1vg91ol5m6o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyArJ0WruViqggJC6Txd5xBHDeOSfdP5ado"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "704256182848-s3umui7oabgkavq47403g1vg91ol5m6o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
