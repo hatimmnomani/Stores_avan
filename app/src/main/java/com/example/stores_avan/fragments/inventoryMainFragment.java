@@ -1,5 +1,6 @@
 package com.example.stores_avan.fragments;
 
+import android.arch.persistence.room.Room;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -17,7 +18,9 @@ import com.example.stores_avan.Entities.Department;
 import com.example.stores_avan.R;
 import com.example.stores_avan.activities.MainActivity;
 import com.example.stores_avan.adapters.DepartmentAdapter;
+import com.example.stores_avan.dao.StoresDB;
 import com.example.stores_avan.server.DeptService;
+import com.example.stores_avan.server.ServerFetch;
 import com.google.gson.Gson;
 
 /**
@@ -57,8 +60,7 @@ public class inventoryMainFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Intent intent = new Intent(getActivity().getApplicationContext(), DeptService.class);
-        getActivity().startService(intent);
+
 
         if (getArguments() != null) {
             mColumnCount = getArguments().getInt(ARG_COLUMN_COUNT);
@@ -76,6 +78,10 @@ public class inventoryMainFragment extends Fragment {
         return view;
     }
     public void responseAss(Department[] cat){
+        /*StoresDB db= Room.databaseBuilder(getActivity(), StoresDB.class,"store.db")
+                .fallbackToDestructiveMigration()
+                .build();
+        Department[] a = db.deptDao().getAll();*/
         RecyclerView recyclerView = getActivity().findViewById(R.id.list);
         DepartmentAdapter adapter = new DepartmentAdapter(cat);
         recyclerView.setAdapter(adapter);
@@ -104,7 +110,10 @@ public class inventoryMainFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        getActivity().registerReceiver(departmentReceived, new IntentFilter("com.example.intent.filter"));
+        getActivity().registerReceiver(departmentReceived, new IntentFilter("broadcast.get.Dept"));
+        Intent intent = new Intent(getActivity().getApplicationContext(), ServerFetch.class);
+        intent.putExtra("fetch","getDepList");
+        getActivity().startService(intent);
     }
 
     @Override
@@ -132,7 +141,7 @@ public class inventoryMainFragment extends Fragment {
         public void onReceive(Context context, Intent intent) {
             String action = intent.getAction();
             Log.d(TAG, "action: " + action);
-            if (action.equalsIgnoreCase("com.example.intent.filter")) {
+            if (action.equalsIgnoreCase("broadcast.get.Dept")) {
                 String profileJson = intent.getStringExtra("data");
                 Department[] cat = new Gson().fromJson(profileJson, Department[].class);
                 Log.d(TAG, "name: " + cat[0].dname);

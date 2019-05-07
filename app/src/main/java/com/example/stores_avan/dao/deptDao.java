@@ -12,10 +12,10 @@ import java.util.List;
 @Dao
 public interface deptDao {
     @Query("SELECT * FROM departments")
-    List<Department> getAll();
+    Department[] getAll();
 
     @Query("SELECT * FROM departments WHERE dId IN (:userIds)")
-    List<Department> loadAllByIds(int[] userIds);
+    Department[] loadAllByIds(int[] userIds);
 
     @Query("SELECT * FROM departments WHERE dname LIKE :dname  LIMIT 1")
     Department findByName(String dname);
@@ -23,8 +23,11 @@ public interface deptDao {
     @Query("SELECT dId FROM departments WHERE dname LIKE :dname  LIMIT 1")
     Integer getIdByName(String dname);
 
+    @Query("DELETE FROM departments")
+    void deleteAlldept();
+
     @Insert
-    void insertAll(Department... users);
+    void insertAll(Department[] users);
 
     @Delete
     void delete(Department user);

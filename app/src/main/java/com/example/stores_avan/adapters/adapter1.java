@@ -6,20 +6,18 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.stores_avan.Entities.ProcurementRequest;
 import com.example.stores_avan.R;
 
 public class adapter1 extends RecyclerView.Adapter<adapter1.MyViewHolder> {
        //ArrayList x ;
        //ArrayList y ;
-    int []x;
-    String [] y;
-    String [] d;
-    public adapter1(int[] a,String[] b,String[] date){
-           x =a;
-           y=b;
-           d=date;
+    ProcurementRequest proc[];
+    public adapter1(ProcurementRequest x[]){
+           proc = x;
        }
 
     @NonNull
@@ -32,19 +30,37 @@ public class adapter1 extends RecyclerView.Adapter<adapter1.MyViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder myViewHolder, int i) {
-        myViewHolder.h.setText(""+x[i]);
-        myViewHolder.c.setText(""+y[i]);
-        myViewHolder.d.setText(""+d[i]);
+
+            myViewHolder.h.setText(""+proc[i].rid);
+            myViewHolder.c.setText(""+proc[i].purpose);
+            myViewHolder.d.setText(""+proc[i].reqD);
+        /*if(proc[i].Status.intValue() >= 0 && proc[i].Status.intValue() < 4){
+            myViewHolder.card.setVisibility(View.INVISIBLE);
+        }*/
+        switch(proc[i].status){
+            case -1:{
+                myViewHolder.e.setText("Rejected By HOD");
+                break;
+            }
+            case -2:{
+                myViewHolder.e.setText("Rejected By Store manager");
+                break;
+            }case -3:{
+                myViewHolder.e.setText("Rejected By Registrar");
+                break;
+            }case -4:{
+                myViewHolder.e.setText("Rejected By Vice-Chancellor");
+                break;
+            }default:{
+                myViewHolder.e.setText("Approved");
+                myViewHolder.but.setVisibility(View.INVISIBLE);
+            }
+        }
     }
 
     @Override
     public int getItemCount() {
-        if(x.length > y.length){
-            return x.length-1;
-        }
-        else {
-            return y.length - 1;
-        }
+            return proc.length;
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder{
@@ -52,7 +68,9 @@ public class adapter1 extends RecyclerView.Adapter<adapter1.MyViewHolder> {
         public TextView h;
         public TextView c;
         public TextView d;
+        public TextView e;
         public CardView card;
+        public Button but;
 
 
         public MyViewHolder(View v){
@@ -61,6 +79,8 @@ public class adapter1 extends RecyclerView.Adapter<adapter1.MyViewHolder> {
             c = v.findViewById(R.id.purpose);
             d = v.findViewById(R.id.r_date);
             card = v.findViewById(R.id.c1);
+            e = v.findViewById(R.id.textView8);
+            but = v.findViewById(R.id.buttonR);
         }
     }
 }

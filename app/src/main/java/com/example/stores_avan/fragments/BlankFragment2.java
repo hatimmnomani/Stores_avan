@@ -1,17 +1,26 @@
 package com.example.stores_avan.fragments;
 
+import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.stores_avan.Entities.ProcurementRequest;
 import com.example.stores_avan.R;
 import com.example.stores_avan.adapters.adapter1;
+import com.example.stores_avan.server.ServerFetch;
+import com.google.gson.Gson;
+
+import static com.example.stores_avan.fragments.inventoryMainFragment.TAG;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -29,7 +38,7 @@ public class BlankFragment2 extends Fragment {
     private RecyclerView a;
     private RecyclerView.Adapter b;
     private RecyclerView.LayoutManager c;
-
+   // private ProcurementRequest[] cat;
     int [] x ={1,2,3,4,5,6,7,8,9,10};
     String [] y ={"Hii","hi","HELLO","hello","SUP","How","know","never","someday","wishing","well"};
     String [] d = {"10/02/2019","10/02/2019","10/02/2019","10/02/2019","10/02/2019","10/02/2019","10/02/2019","10/02/2019","10/02/2019","10/02/2019"};
@@ -78,16 +87,56 @@ public class BlankFragment2 extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        View rootView =inflater.inflate(R.layout.activity_recycle, container, false);
-        // Inflate the layout for this fragment
-        //rootView.setContentView(R.layout.activity_recycle);
-        a = rootView.findViewById(R.id.r1);
-        b = new adapter1(x,y,d);
+    public void onResume() {
+        super.onResume();
+        getActivity().registerReceiver(procHisReceived, new IntentFilter("broadcast.get.History"));
+        Intent intent = new Intent(getActivity().getApplicationContext(), ServerFetch.class);
+        intent.putExtra("fetch","getProcHisList");
+        getActivity().startService(intent);
+    }
+    @Override
+    public void onPause() {
+        super.onPause();
+        getActivity().unregisterReceiver(procHisReceived);
+    }
+    BroadcastReceiver procHisReceived = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            String action = intent.getAction();
+            Log.d(TAG, "action: " + action);
+            if (action.equalsIgnoreCase("broadcast.get.History")) {
+                String profileJson = intent.getStringExtra("data");
+                ProcurementRequest cat[] = new Gson().fromJson(profileJson, ProcurementRequest[].class);
+                Log.d(TAG, "name: " + cat.length);
+                Log.d(TAG, "id: " + cat[0].rid);
+                responseAs(cat);
+                //showCatagory(cat);
+            } else {
+                Log.d(TAG, "Maybe useful intent action, but not of our interest");
+            }
+
+        }
+    };
+
+    private void responseAs(ProcurementRequest[] cat) {
+        a = getActivity().findViewById(R.id.r1);
+        b = new adapter1(cat);
         c = new LinearLayoutManager(getActivity());
         a.setLayoutManager(c);
         a.setAdapter(b);
+    }
+
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        View rootView =inflater.inflate(R.layout.activity_recycle,  null);
+        // Inflate the layout for this fragment
+        //rootView.setContentView(R.layout.activity_recycle);
+        Intent intent = new Intent(getActivity().getApplicationContext(), ServerFetch.class);
+        intent.putExtra("fetch","getProcHisList");
+        getActivity().startService(intent);
+
         return rootView;
     }
 

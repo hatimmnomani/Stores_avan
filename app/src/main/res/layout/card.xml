@@ -79,14 +79,23 @@
 
                 <TextView
                     android:id="@+id/textView8"
-                    android:fontFamily="@font/robotoslab_bold"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
+                    android:fontFamily="@font/robotoslab_bold"
                     android:text="TextView"
+                    android:textAlignment="center"
                     android:textColor="#131212"
                     android:textSize="25sp" />
 
+
+                <Button
+                    android:id="@+id/buttonR"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#fff"
+                    android:text="Reason"
+                    android:textColor="@color/avanRed" />
 
                 <ToggleButton
                     android:id="@+id/toggleButton"
@@ -105,7 +114,8 @@
                     android:shadowColor="@color/avanRed"
 
                     android:text="ToggleButton"
-                    android:textColor="@color/avanRed" />
+                    android:textColor="@color/avanRed"
+                    android:visibility="gone" />
             </LinearLayout>
 
         </LinearLayout>

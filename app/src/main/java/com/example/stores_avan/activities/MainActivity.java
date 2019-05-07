@@ -82,13 +82,13 @@ public class MainActivity extends AppCompatActivity {
         sharedPreferences = getSharedPreferences("com.avan.stores.userprofile", Context.MODE_PRIVATE);
         editor = sharedPreferences.edit();
 
-        btnt = findViewById(R.id.xyz);
+
         btnt2 = findViewById(R.id.abc);
 
         btn_login.setOnClickListener(v -> SignInGoogle());
         btn_logout.setOnClickListener(v -> Logout());
 
-        btnt.setOnClickListener(v -> showT());
+
         btnt2.setOnClickListener(v -> showE());
 
     }
@@ -136,6 +136,9 @@ public class MainActivity extends AppCompatActivity {
 
                         FirebaseUser user = mAuth.getCurrentUser();
                         serverAuth(user);
+                        Intent i = new Intent(this,ServerFetch.class);
+                        i.putExtra("fetch","update");
+
                         updateUI(user);
 
                     } else {
@@ -161,11 +164,11 @@ public class MainActivity extends AppCompatActivity {
         if (user != null) {
             String name = user.getDisplayName();
             String email = user.getEmail();
-            String photo = String.valueOf(user.getPhotoUrl());
+            //String photo = String.valueOf(user.getPhotoUrl());
 
             makeText(this,name, Toast.LENGTH_SHORT).show();
             makeText(this,email, Toast.LENGTH_SHORT).show();
-            Picasso.get().load(photo).into(image);
+            //Picasso.get().load(photo).into(image);
             btn_logout.setVisibility(View.VISIBLE);
             btn_login.setVisibility(View.INVISIBLE);
         } else {
@@ -223,9 +226,6 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, Main2Activity.class);
         startActivity(intent);
     }
-    public void showT(){
-        Intent intent = new Intent(this, recycle.class);
-        startActivity(intent);
-    }
+
 
 }

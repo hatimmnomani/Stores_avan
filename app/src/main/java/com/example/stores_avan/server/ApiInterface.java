@@ -3,6 +3,7 @@ import android.arch.persistence.room.Ignore;
 
 import com.example.stores_avan.Entities.Catagory;
 import com.example.stores_avan.Entities.Department;
+import com.example.stores_avan.Entities.Inventory;
 import com.example.stores_avan.Entities.Items;
 import com.example.stores_avan.Entities.ProcurementRequest;
 import com.example.stores_avan.Entities.userId;
@@ -32,6 +33,9 @@ public interface ApiInterface {
 
     @GET("/stores_procurement/app/catagory.php")
     Call<Catagory[]> getCat();
+
+    @GET("/stores_procurement/app/inventory.php")
+    Call<Inventory[]> getInven();
 
     @FormUrlEncoded
     @POST("/stores_procurement/app/post_procurement.php")
